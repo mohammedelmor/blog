@@ -16,6 +16,8 @@ const http = require('http');
 const sequelize = require("../database")
 
 
+
+
 setupDb()
     .then(() => {
         sequelize.sync({force: true})
