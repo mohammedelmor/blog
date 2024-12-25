@@ -8,7 +8,7 @@ module.exports = body('username')
     .isLength({min: 3})
     .trim()
     .escape()
-    .withMessage("Username cannot be empty - min length: 3")
+    .withMessage("username min length: 3")
     .custom(async username => {
         if (await User.findOne({ where: { username } })) {
             throw new Error('Username already exists');
