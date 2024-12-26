@@ -10,6 +10,8 @@ const sequelize = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.p
 const modelDefiners = [
     require('./models/user.model'),
     require('./models/refresh_token.model'),
+    require('./models/post.model'),
+    require('./models/comment.model')
 ];
 
 for (const modelDefiner of modelDefiners) {

@@ -1,16 +1,14 @@
 const process = require("node:process");
 const express = require("express");
-const {validationResult} = require('express-validator');
-const bcrypt = require('bcrypt')
 const {sign, verify} = require("jsonwebtoken");
 
 const sequelize = require("../database");
 const logger = require("../logger");
 
 // middlewares
-const checkUserRegistration = require("../middlewares/checkUserRegistration");
-const checkUserLogin = require("../middlewares/checkUserLogin");
-const checkRefreshToken = require("../middlewares/checkRefreshToken");
+const checkUserRegistration = require("../middlewares/users/checkUserRegistration");
+const checkUserLogin = require("../middlewares/users/checkUserLogin");
+const checkRefreshToken = require("../middlewares/users/checkRefreshToken");
 const checkValidation = require("../middlewares/checkValidation");
 
 const router = express.Router();
