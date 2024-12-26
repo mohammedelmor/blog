@@ -46,7 +46,7 @@ router.post("/login",
                 }
             })
             if (!user || !await user.comparePassword(req.body.password)) {
-                res.status(400).json({message: "username or password is incorrect!"})
+                res.status(403).json({message: "Invalid credentials!"})
             }
 
             // Generate tokens
